@@ -4,16 +4,16 @@ const importRoutes = keystone.importer(__dirname);
 
 keystone.pre('routes', function (req, res, next) {
 	res.locals.navLinks = [
-		{ label: 'Home', key: 'home', href: '/' },
-		{ label: 'Blog', key: 'blog', href: '/blog' },
-		{ label: 'Gallery', key: 'gallery', href: '/gallery' },
-		{ label: 'Contact', key: 'contact', href: '/contact' },
+		{ label: '首页', key: 'home', href: '/' },
+		{ label: '日记', key: 'blog', href: '/blog' },
+		{ label: '相册', key: 'gallery', href: '/gallery' },
+		{ label: '关于', key: 'contact', href: '/contact' },
 	];
 	res.locals.user = req.user;
 	next();
 });
 
-keystone.pre('render', middleware.theme);
+keystone.pre('routes', middleware.theme);
 keystone.pre('render', middleware.flashMessages);
 
 keystone.set('404', function (req, res, next) {

@@ -2,8 +2,8 @@ var keystone = require('keystone');
 
 keystone.init({
 
-	'name': 'Keystone Demo',
-	'brand': 'Demo',
+	'name': '盐·谈',
+	'brand': '盐·谈',
 
 	'favicon': 'public/favicon.ico',
 	'less': 'public',
@@ -13,13 +13,13 @@ keystone.init({
 	'view engine': 'jade',
 
 	'auto update': true,
-	'mongo': process.env.MONGO_URI || process.env.MONGOLAB_URI || 'mongodb://localhost/keystone-demo',
-	'cloudinary config': 'cloudinary://333779167276662:_8jbSi9FB3sWYrfimcl8VKh34rI@keystone-demo',
+	'mongo': process.env.MONGO_URI || process.env.MONGOLAB_URI || 'mongodb://localhost/saltalk',
+	'cloudinary config': 'cloudinary://638331826671982:deg3eORfXs7h96_P03h2yPi-HXo@dvrvxgzb7',
 
 	'session': true,
 	'auth': true,
 	'user model': 'User',
-	'cookie secret': process.env.COOKIE_SECRET || 'demo',
+	'cookie secret': process.env.COOKIE_SECRET || 'saltalk',
 
 	'ga property': process.env.GA_PROPERTY,
 	'ga domain': process.env.GA_DOMAIN,
@@ -45,11 +45,11 @@ keystone.set('locals', {
 keystone.set('routes', require('./routes'));
 
 keystone.set('nav', {
-	'posts': ['posts', 'post-comments', 'post-categories'],
-	'galleries': 'galleries',
-	'enquiries': 'enquiries',
-	'users': 'users',
-	'field-tests': 'things'
+	'文章': ['posts', 'post-comments', 'post-categories'],
+	'相册': 'galleries',
+	// 'enquiries': 'enquiries',
+	'用户': 'users'
+	// 'field-tests': 'things'
 });
 
 keystone.start();
